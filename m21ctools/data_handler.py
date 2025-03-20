@@ -1,11 +1,11 @@
 """
-data_handler_2d.py
+data_handler.py
 
 This module provides the CubedSphereData class, designed to read, process, interpolate, 
 and visualize 2D cubed-sphere data from NetCDF files.
 
 Usage:
-    from data_handler_2d import CubedSphereData
+    from data_handler import CubedSphereData
 """
 
 import xarray as xr
@@ -88,7 +88,7 @@ class CubedSphereData:
 
         return all_lats, all_lons, all_data
 
-    def interpolate_to_latlon_grid(self):
+    def interpolate_to_latlon_grid(self, method='linear'):
         """Interpolates the data to a regular latitude-longitude grid.
         Returns:
         tuple: Interpolated latitude grid, longitude grid, and data grid arrays."""
@@ -97,7 +97,7 @@ class CubedSphereData:
         lon_grid, lat_grid = np.meshgrid(lon_grid, lat_grid)
 
         # Perform interpolation
-        data_grid = griddata((self.all_lats, self.all_lons), self.all_data, (lat_grid, lon_grid), method='linear')
+        data_grid = griddata((self.all_lats, self.all_lons), self.all_data, (lat_grid, lon_grid), method=method)
 
         self.lat_grid, self.lon_grid, self.data_grid = lat_grid, lon_grid, data_grid
         return lat_grid, lon_grid, data_grid

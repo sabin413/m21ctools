@@ -8,7 +8,7 @@ import pytest
 # Ensure that the project root is on the sys.path so that the m21ctools package is found.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from m21ctools.data_handler_2d import CubedSphereData
+from m21ctools.data_handler import CubedSphereData
 
 @pytest.fixture
 def temp_nc4_file():
