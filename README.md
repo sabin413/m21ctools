@@ -1,12 +1,12 @@
 # m21ctools
 
-**m21ctools** is a Python library designed to handle cubed-sphere data efficiently. It provides tools for reading, processing, interpolating, and visualizing data from NetCDF-4 files, making it easier for scientists and engineers to work with cubed-sphere grids in climate, meteorological, and geospatial applications.
+**m21ctools** is a Python library designed to handle cubed-sphere data efficiently. It provides tools for reading, processing, interpolating, and visualizing data from cubed-sphere NetCDF-4 files.
 
 ## Key Features
 
 ### Data Loading and Cleaning
 - **Reading NetCDF Files:**  
-  Easily read cubed-sphere data from NetCDF-4 files using the `xarray` library with the `h5netcdf` engine.
+  Easily read from NetCDF-4 files using the `xarray` library with the `h5netcdf` engine.
 - **Handling Duplicate Dimensions:**  
   Automatically resolves issues with duplicate 'ncontact' dimension names by replacing them with unique names, ensuring the dataset is ready for analysis.
 
@@ -20,20 +20,20 @@
 
 ### Interpolation to Regular Grid
 - **Grid Interpolation:**  
-  Interpolates irregular cubed-sphere data onto a regular latitude-longitude grid using efficient methods from SciPy.
+  Interpolates irregular cubed-sphere data onto a regular latitude-longitude grid using interpolation methods from SciPy.
 
 ### Visualization
 - **Plotting Tools:**  
-  Visualizes the interpolated data with contour plots using Matplotlib and Cartopy, complete with coastlines and customizable axis labels.
+  Visualizes the interpolated data with contour plots using Matplotlib and Cartopy, complete with coastlines and axis labels.
 
 ## Usage Example
 
-Below is a simple example to get you started:
+Below is a simple example:
 
 ```python
 from m21ctools.data_handler import CubedSphereData
 
-# Initialize the CubedSphereData object with your NetCDF file and desired settings.
+# Initialize the CubedSphereData object with your NetCDF file path, time and level (indices), variable name, and grid resolution value.
 data_handler = CubedSphereData(
     file_path="path/to/your/datafile.nc4",
     time=0,
