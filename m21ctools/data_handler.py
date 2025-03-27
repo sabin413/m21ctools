@@ -1,11 +1,9 @@
 """
 data_handler.py
 
-This module provides the CubedSphereData class, designed to read, process, interpolate, 
+CubedSphereData class, designed to read, process, interpolate, 
 and visualize 2D cubed-sphere data from NetCDF files.
 
-Usage:
-    from data_handler import CubedSphereData
 """
 
 import xarray as xr
