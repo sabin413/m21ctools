@@ -10,7 +10,7 @@ name = "m21ctools"
 version = "0.1.32"
 description = "Tools for processing cubed-sphere data."
 readme = "README.md"
-license = {text = "MIT"}
+license = {text = "APACHE 2.0"}
 authors = [
     { name="Sabin Adhikari", email="sbn.adh@gmail.com" }
 ]
